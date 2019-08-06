@@ -29,4 +29,9 @@ public class RegexController {
   List<MatchResult> match(@RequestBody MatchRequest request) {
     return taskService.match(request);
   }
+
+  @PostMapping("/find")
+  List<MatchResult> find(@RequestBody MatchRequest request) {
+    return taskService.find(request);
+  }
 }

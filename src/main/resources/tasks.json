@@ -59,5 +59,15 @@
       "133****7355",
       "186****9999"
     ]
+  },
+  {
+    "id": 4,
+    "title": "查找多个组",
+    "description": "每个匹配结果中可以包含多个group",
+    "level": 2,
+    "type": "FIND",
+    "sources": [
+      "John writes about this, and John Doe writes about that"
+    ]
   }
 ]

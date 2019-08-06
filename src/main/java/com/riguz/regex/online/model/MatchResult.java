@@ -1,9 +1,12 @@
 package com.riguz.regex.online.model;
 
+import java.util.List;
+
 public class MatchResult {
 
   private String source;
   private boolean matched;
+  private List<String> groups;
 
   public MatchResult() {
   }
@@ -11,6 +14,12 @@ public class MatchResult {
   public MatchResult(String source, boolean matched) {
     this.source = source;
     this.matched = matched;
+  }
+
+  public MatchResult(String source, List<String> groups) {
+    this.source = source;
+    this.groups = groups;
+    this.matched = !groups.isEmpty();
   }
 
   public String getSource() {
@@ -27,5 +36,13 @@ public class MatchResult {
 
   public void setMatched(boolean matched) {
     this.matched = matched;
+  }
+
+  public List<String> getGroups() {
+    return groups;
+  }
+
+  public void setGroups(List<String> groups) {
+    this.groups = groups;
   }
 }
