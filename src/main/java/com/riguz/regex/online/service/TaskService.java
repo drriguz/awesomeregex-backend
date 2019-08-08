@@ -65,6 +65,17 @@ public class TaskService {
     return new MatchResult(source, groupMarks);
   }
 
+  public List<MatchResult> replace(MatchRequest request) {
+    return request.getSources()
+        .stream()
+        .map((source) -> replace(source, request.getRegex(), request.getReplaceTo()))
+        .collect(Collectors.toList());
+  }
+
+  private MatchResult replace(String source, String regex, String replaceTo) {
+    return new MatchResult(source, source.replaceAll(regex, replaceTo));
+  }
+
   static class GroupPosition {
 
     final int level;

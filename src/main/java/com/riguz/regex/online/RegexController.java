@@ -34,4 +34,9 @@ public class RegexController {
   List<MatchResult> find(@RequestBody MatchRequest request) {
     return taskService.find(request);
   }
+
+  @PostMapping("/replace")
+  List<MatchResult> replace(@RequestBody MatchRequest request) {
+    return taskService.replace(request);
+  }
 }

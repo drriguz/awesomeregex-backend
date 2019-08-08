@@ -6,6 +6,7 @@ public class MatchRequest {
 
   private List<String> sources;
   private String regex;
+  private String replaceTo;
 
   public MatchRequest() {
   }
@@ -24,5 +25,13 @@ public class MatchRequest {
 
   public void setRegex(String regex) {
     this.regex = regex;
+  }
+
+  public String getReplaceTo() {
+    return replaceTo;
+  }
+
+  public void setReplaceTo(String replaceTo) {
+    this.replaceTo = replaceTo;
   }
 }

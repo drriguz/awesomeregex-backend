@@ -7,6 +7,7 @@ public class MatchResult {
   private String source;
   private boolean matched;
   private List<String> groups;
+  private String replaced;
 
   public MatchResult() {
   }
@@ -14,6 +15,11 @@ public class MatchResult {
   public MatchResult(String source, boolean matched) {
     this.source = source;
     this.matched = matched;
+  }
+
+  public MatchResult(String source, String replaced) {
+    this.source = source;
+    this.replaced = replaced;
   }
 
   public MatchResult(String source, List<String> groups) {
@@ -44,5 +50,13 @@ public class MatchResult {
 
   public void setGroups(List<String> groups) {
     this.groups = groups;
+  }
+
+  public String getReplaced() {
+    return replaced;
+  }
+
+  public void setReplaced(String replaced) {
+    this.replaced = replaced;
   }
 }
