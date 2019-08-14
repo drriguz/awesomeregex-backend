@@ -8,13 +8,15 @@ public class MatchResult {
   private boolean matched;
   private List<String> groups;
   private String replaced;
+  private long cost;
 
   public MatchResult() {
   }
 
-  public MatchResult(String source, boolean matched) {
+  public MatchResult(String source, boolean matched, long cost) {
     this.source = source;
     this.matched = matched;
+    this.cost = cost;
   }
 
   public MatchResult(String source, String replaced) {
@@ -58,5 +60,13 @@ public class MatchResult {
 
   public void setReplaced(String replaced) {
     this.replaced = replaced;
+  }
+
+  public long getCost() {
+    return cost;
+  }
+
+  public void setCost(int cost) {
+    this.cost = cost;
   }
 }

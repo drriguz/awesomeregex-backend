@@ -6,6 +6,8 @@ import com.riguz.regex.online.model.MatchRequest;
 import com.riguz.regex.online.model.MatchResult;
 import com.riguz.regex.online.model.Task;
 import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -33,7 +35,10 @@ public class TaskService {
   }
 
   private MatchResult match(String source, String regex) {
-    return new MatchResult(source, source.matches(regex));
+    Instant start = Instant.now();
+    boolean matches = source.matches(regex);
+    Instant finish = Instant.now();
+    return new MatchResult(source, matches, Duration.between(start, finish).toNanos());
   }
 
   public List<MatchResult> find(MatchRequest request) {
